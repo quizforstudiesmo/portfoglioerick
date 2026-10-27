@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erick Geovanny Pincay Morales | Media & AI Specialist Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0a0d14',
+                            card: '#121723',
+                            border: '#1f293d',
+                            accent: '#6366f1',
+                            purple: '#a855f7',
+                            cyan: '#06b6d4'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0d14;
+            color: #e2e8f0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glow-effect {
+            position: relative;
+        }
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, #6366f1, #a855f7, #06b6d4);
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .glow-effect:hover::before {
+            opacity: 0.6;
+        }
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image:
+                    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-200 antialiased selection:bg-brand-accent selection:text-white relative">
+
+<!-- Background Ambient Light -->
+<div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+<div class="fixed top-0 left-1/4 w-96 h-96 bg-brand-accent/15 rounded-full blur-3xl pointer-events-none z-0"></div>
+<div class="fixed bottom-0 right-1/4 w-96 h-96 bg-brand-purple/15 rounded-full blur-3xl pointer-events-none z-0"></div>
+
+<!-- Navigation Header -->
+<header class="fixed top-0 left-0 right-0 z-40 bg-brand-dark/80 backdrop-blur-md border-b border-brand-border/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <a href="#hero" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-accent to-brand-purple flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-accent/20">
+                E
+            </div>
+            <div>
+                <span class="text-lg font-bold text-white group-hover:text-brand-accent transition-colors">Erick Morales</span>
+                <span class="block text-xs text-slate-400">Media & AI Specialist</span>
+            </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a href="#about" class="text-slate-300 hover:text-brand-accent transition-colors">Profilo</a>
+            <a href="#projects" class="text-slate-300 hover:text-brand-accent transition-colors">Progetti Multimediali</a>
+            <a href="#web-projects" class="text-slate-300 hover:text-brand-accent transition-colors">Siti Web Live</a>
+            <a href="#thesis" class="text-slate-300 hover:text-brand-accent transition-colors">Tesi & IA</a>
+            <a href="#skills" class="text-slate-300 hover:text-brand-accent transition-colors">Competenze</a>
+            <a href="#contact" class="px-4 py-2 rounded-xl bg-brand-accent text-white hover:bg-brand-accent/90 transition-all shadow-md shadow-brand-accent/20">Contatti</a>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Nav Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-6 py-4 flex flex-col gap-4">
+        <a href="#about" class="mobile-link text-slate-300 hover:text-brand-accent">Profilo</a>
+        <a href="#projects" class="mobile-link text-slate-300 hover:text-brand-accent">Progetti Multimediali</a>
+        <a href="#web-projects" class="mobile-link text-slate-300 hover:text-brand-accent">Siti Web Live</a>
+        <a href="#thesis" class="mobile-link text-slate-300 hover:text-brand-accent">Tesi & IA</a>
+        <a href="#skills" class="mobile-link text-slate-300 hover:text-brand-accent">Competenze</a>
+        <a href="#contact" class="mobile-link text-brand-accent font-semibold">Contatti</a>
+    </div>
+</header>
+
+<main class="relative z-10 pt-20">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
+        <div class="max-w-5xl mx-auto text-center space-y-8">
+
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-card border border-brand-border text-brand-cyan text-xs sm:text-sm font-medium shadow-inner">
+                <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
+                Università di Genova • Laureato in Media, Comunicazione e Società
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight">
+                Erick Geovanny <br class="hidden sm:inline"/>
+                <span class="bg-gradient-to-r from-brand-accent via-brand-purple to-brand-cyan bg-clip-text text-transparent">Pincay Morales</span>
+            </h1>
+
+            <p class="text-xl sm:text-2xl text-slate-300 font-medium max-w-3xl mx-auto">
+                Media & Communication Specialist <span class="text-brand-accent">|</span> AI Integration & Visual Design
+            </p>
+
+            <p id="about" class="text-base sm:text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                Specializzato nella convergenza tra comunicazione visiva strategica e tecnologie emergenti. Sviluppo soluzioni multimediali, progetti cross-mediali e applicativi interattivi valorizzati dall'integrazione pragmatica dell'Intelligenza Artificiale Generativa, argomento approfondito nella mia Tesi di Laurea
+                <span class="text-slate-200 italic font-semibold">"Fotografia e intelligenza artificiale: dall'autenticità alla simulazione"</span>.
+            </p>
+
+            <!-- Quick Contacts Bar -->
+            <div class="pt-4 flex flex-wrap items-center justify-center gap-4 text-sm">
+                <a href="mailto:erick.morales.k@gmail.com" class="flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-card border border-brand-border hover:border-brand-accent hover:text-white transition-all group">
+                    <i data-lucide="mail" class="w-4 h-4 text-brand-accent"></i>
+                    <span>erick.morales.k@gmail.com</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </a>
+                <a href="tel:+393882576130" class="flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-card border border-brand-border hover:border-brand-accent hover:text-white transition-all group">
+                    <i data-lucide="phone" class="w-4 h-4 text-brand-purple"></i>
+                    <span>+39 388 257 6130</span>
+                </a>
+                <div class="flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-card border border-brand-border text-slate-300">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-brand-cyan"></i>
+                    <span>Genova, Italia</span>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 pt-4">
+                <a href="#projects" class="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-accent to-brand-purple text-white font-semibold hover:shadow-lg hover:shadow-brand-accent/25 transition-all flex items-center gap-2">
+                    <i data-lucide="folder-kanban" class="w-5 h-5"></i>
+                    Esplora I Progetti
+                </a>
+                <a href="#web-projects" class="px-8 py-4 rounded-xl bg-brand-card border border-brand-border text-slate-200 font-semibold hover:bg-brand-border/40 transition-all flex items-center gap-2">
+                    <i data-lucide="globe" class="w-5 h-5 text-brand-cyan"></i>
+                    Siti Web Demo Live
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MULTIMEDIA PROJECTS SECTION -->
+    <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-brand-border/40">
+        <div class="space-y-4 text-center md:text-left mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white">Progetti Multimediali & Strategia</h2>
+            <p class="text-slate-400 max-w-2xl">Campagne di comunicazione sociale, applicazioni ed esperienze cross-mediali sviluppate con focus su impatto visivo e UX.</p>
+
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap gap-2 pt-6 justify-center md:justify-start" id="filter-buttons">
+                <button class="filter-btn active px-4 py-2 rounded-lg text-sm font-medium bg-brand-accent text-white transition-all" data-filter="all">Tutti</button>
+                <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium bg-brand-card text-slate-300 hover:bg-brand-border transition-all" data-filter="ar">App & AR</button>
+                <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium bg-brand-card text-slate-300 hover:bg-brand-border transition-all" data-filter="social">Video & Social</button>
+                <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium bg-brand-card text-slate-300 hover:bg-brand-border transition-all" data-filter="podcast">Podcast & Audio</button>
+                <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium bg-brand-card text-slate-300 hover:bg-brand-border transition-all" data-filter="data">Data & SQL</button>
+            </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+
+            <!-- Voltech Lab -->
+            <div class="project-card glow-effect bg-brand-card border border-brand-border rounded-2xl overflow-hidden flex flex-col justify-between p-6 hover:border-brand-accent/50 transition-all" data-category="ar">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-start">
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-accent/20 text-brand-accent border border-brand-accent/30">App & AR / Video</span>
+                        <i data-lucide="smartphone" class="w-6 h-6 text-slate-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Voltech Lab (App Educativa & AR)</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Simulatore tecnico ed esperienziale in Realtà Aumentata per l'elettrotecnica. Progettato per eliminare la paura dell'errore nei laboratori grazie all'assistente virtuale guida <strong>Wattino</strong>.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs text-slate-400 pt-2">
+                        <span class="bg-brand-dark px-2.5 py-1 rounded-md border border-brand-border">Realtà Aumentata</span>
+                        <span class="bg-brand-dark px-2.5 py-1 rounded-md border border-brand-border">Wattino Mascot</span>
+                        <span class="bg-brand-dark px-2.5 py-1 rounded-md border border-brand-border">Gamification (300 pt)</span>
+                    </div>
+                </div>
+                <div class="pt-6 flex gap-3">
+                    <button onclick="openModal('voltech')" class="w-full py-2.5 rounded-xl bg-brand-border/60 hover:bg-brand-accent hover:text-white text-slate-200 text-sm font-semibold transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="info" class="w-4 h-4"></i> Dettagli & Concept
+                    </button>
+                </div>
+            </div>
+
+            <!-- Carico di Rottura -->
+            <div class="project-card glow-effect bg-brand-card border border-brand-border rounded-2xl overflow-hidden flex flex-col justify-between p-6 hover:border-brand-accent/50 transition-all" data-category="social">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-start">
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-purple/20 text-brand-purple border border-brand-purple/30">Video & Campagne Sociali</span>
+                        <i data-lucide="film" class="w-6 h-6 text-slate-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Carico di Rottura / Un Passo alla Volta</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Campagna di comunicazione sociale multicanale sulla salute mentale e benessere psicofisico sviluppata in collaborazione con UniGe DAD e ASL3 Liguria.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs text-slate-400 pt-2">
+                        <span class="bg-brand-dark px-2.5 py-1 rounded-md border border-brand-border">ASL3 Liguria</span>
+                        <span class="bg-brand-dark px-2.5 py-1 rounded-md border border-brand-border">Video Animazione B/N</span>
+                        <span class="bg-brand-dark px-2.5 py-1 rounded-md border border-brand-border">Poster Design</span>
+                    </div>
+                </div>
+                <div class="pt-6 flex gap-3">
+                    <button onclick="openModal('carico')" class="w-full py-2.5 rounded-xl bg-brand-border/60 hover:bg-brand-purple hover:text-white text-slate-200 text-sm font-semibold transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="info" class="w-4 h-4"></i> Scheda Campagna
+                    </button>
+                </div>
+            </div>
+
+            <!-- My Zone -->
+            <div class="project-card glow-effect bg-brand-card border border-brand-border rounded-2xl overflow-hidden flex flex-col justify-between p-6 hover:border-brand-accent/50 transition-all" data-category="podcast">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-start">
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/30">Podcast & Sound Design</span>
+                        <i data-lucide="mic" class="w-6 h-6 text-slate-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">My Zone (Podcast Cross-Mediale)</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Audio-documentario in 4 episodi su multiculturalità, musica hip-hop, caro affitto e salute mentale nelle periferie urbane. Post-produzione audio curata su REAPER.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs text-slate-400 pt-2">
+                        <span class="bg-brand-dark px-2.5 py-1 rounded-md border border-brand-border">REAPER Audio</span>
+                        <span class="bg-brand-dark px-2.5 py-1 rounded-md border border-brand-border">4 Episodi</span>
+                        <span class="bg-brand-dark px-2.5 py-1 rounded-md border border-brand-border">Analisi Sociologica</span>
+                    </div>
+                </div>
+                <div class="pt-6 flex gap-3">
+                    <a href="https://drive.google.com/drive/folders/1T03IBsYcN0qz9LVqc3XPC_bevfnLst5r?usp=sharing" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-brand-cyan/20 hover:bg-brand-cyan hover:text-black text-brand-cyan font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="headphones" class="w-4 h-4"></i> Ascolta Demo su Drive
+                    </a>
+                </div>
+            </div>
+
+            <!-- EnerGym -->
+            <div class="project-card glow-effect bg-brand-card border border-brand-border rounded-2xl overflow-hidden flex flex-col justify-between p-6 hover:border-brand-accent/50 transition-all" data-category="data">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-start">
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Data & Database</span>
+                        <i data-lucide="database" class="w-6 h-6 text-slate-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">EnerGym (Database & BI)</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Progettazione completa di un database relazionale SQL per la gestione e l'analisi clienti/abbonamenti di un centro fitness, integrato con reportistica statistica.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs text-slate-400 pt-2">
+                        <span class="bg-brand-dark px-2.5 py-1 rounded-md border border-brand-border">Modello E-R</span>
+                        <span class="bg-brand-dark px-2.5 py-1 rounded-md border border-brand-border">SQL Queries</span>
+                        <span class="bg-brand-dark px-2.5 py-1 rounded-md border border-brand-border">Business Intelligence</span>
+                    </div>
+                </div>
+                <div class="pt-6 flex gap-3">
+                    <button onclick="openModal('energym')" class="w-full py-2.5 rounded-xl bg-brand-border/60 hover:bg-emerald-500 hover:text-black text-slate-200 text-sm font-semibold transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="table" class="w-4 h-4"></i> Schema Modello ER
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LIVE WEB PROJECTS SECTION -->
+    <section id="web-projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-brand-border/40">
+        <div class="space-y-4 mb-12">
+            <div class="flex items-center gap-2 text-brand-cyan text-sm font-semibold">
+                <i data-lucide="code" class="w-4 h-4"></i> LIVE DEMOS & REPOSITORIES
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white">Progetti Web Accessibili Online</h2>
+            <p class="text-slate-400 max-w-2xl">Applicativi web, landing page interattive e strumenti didattici sviluppati e ospitati direttamente su GitHub Pages.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- VIDA -->
+            <a href="https://quizforstudiesmo.github.io/VIDA/" target="_blank" rel="noopener noreferrer" class="group bg-brand-card border border-brand-border hover:border-brand-accent p-6 rounded-2xl transition-all flex flex-col justify-between space-y-4 hover:-translate-y-1">
+                <div>
+                    <div class="flex items-center justify-between text-slate-400 mb-2">
+                        <i data-lucide="plane" class="w-5 h-5 text-brand-accent"></i>
+                        <i data-lucide="external-link" class="w-4 h-4 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors">VIDA - Digital Travel Agency</h3>
+                    <p class="text-slate-400 text-sm mt-2">Brand identity e piattaforma web per agenzia viaggi con focus su pacchetti europei.</p>
+                </div>
+                <span class="text-xs font-semibold text-brand-accent">Apri Demo Live →</span>
+            </a>
+
+            <!-- Campus Board Rush -->
+            <a href="https://quizforstudiesmo.github.io/Campus-Board-Rush/" target="_blank" rel="noopener noreferrer" class="group bg-brand-card border border-brand-border hover:border-brand-purple p-6 rounded-2xl transition-all flex flex-col justify-between space-y-4 hover:-translate-y-1">
+                <div>
+                    <div class="flex items-center justify-between text-slate-400 mb-2">
+                        <i data-lucide="graduation-cap" class="w-5 h-5 text-brand-purple"></i>
+                        <i data-lucide="external-link" class="w-4 h-4 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-brand-purple transition-colors">Campus Board Rush</h3>
+                    <p class="text-slate-400 text-sm mt-2">Applicativo web interattivo per la gestione dello studio e delle scadenze universitarie.</p>
+                </div>
+                <span class="text-xs font-semibold text-brand-purple">Apri Demo Live →</span>
+            </a>
+
+            <!-- Scollegati -->
+            <a href="https://quizforstudiesmo.github.io/SCOLLEEGATI/" target="_blank" rel="noopener noreferrer" class="group bg-brand-card border border-brand-border hover:border-brand-cyan p-6 rounded-2xl transition-all flex flex-col justify-between space-y-4 hover:-translate-y-1">
+                <div>
+                    <div class="flex items-center justify-between text-slate-400 mb-2">
+                        <i data-lucide="wifi-off" class="w-5 h-5 text-brand-cyan"></i>
+                        <i data-lucide="external-link" class="w-4 h-4 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-brand-cyan transition-colors">Scollegati (Digital Detox)</h3>
+                    <p class="text-slate-400 text-sm mt-2">Piattaforma e risorsa digitale focalizzata sul benessere e la disconnessione consapevole.</p>
+                </div>
+                <span class="text-xs font-semibold text-brand-cyan">Apri Demo Live →</span>
+            </a>
+
+            <!-- Prova Esame -->
+            <a href="https://quizforstudiesmo.github.io/provaesame/" target="_blank" rel="noopener noreferrer" class="group bg-brand-card border border-brand-border hover:border-emerald-400 p-6 rounded-2xl transition-all flex flex-col justify-between space-y-4 hover:-translate-y-1">
+                <div>
+                    <div class="flex items-center justify-between text-slate-400 mb-2">
+                        <i data-lucide="check-square" class="w-5 h-5 text-emerald-400"></i>
+                        <i data-lucide="external-link" class="w-4 h-4 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">Piattaforma Prova Esame</h3>
+                    <p class="text-slate-400 text-sm mt-2">Interfaccia interattiva per simulazione e preparazione test d'esame.</p>
+                </div>
+                <span class="text-xs font-semibold text-emerald-400">Apri Demo Live →</span>
+            </a>
+
+            <!-- Questioni Esame -->
+            <a href="https://quizforstudiesmo.github.io/questionesame/" target="_blank" rel="noopener noreferrer" class="group bg-brand-card border border-brand-border hover:border-amber-400 p-6 rounded-2xl transition-all flex flex-col justify-between space-y-4 hover:-translate-y-1">
+                <div>
+                    <div class="flex items-center justify-between text-slate-400 mb-2">
+                        <i data-lucide="help-circle" class="w-5 h-5 text-amber-400"></i>
+                        <i data-lucide="external-link" class="w-4 h-4 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">Questioni Esame</h3>
+                    <p class="text-slate-400 text-sm mt-2">Modulo esercitazioni pratiche e ripasso dinamico su quesiti accademici.</p>
+                </div>
+                <span class="text-xs font-semibold text-amber-400">Apri Demo Live →</span>
+            </a>
+
+            <!-- GitHub Profile -->
+            <a href="https://github.com/quizforstudiesmo" target="_blank" rel="noopener noreferrer" class="group bg-gradient-to-br from-brand-card to-brand-border/40 border border-brand-border hover:border-white p-6 rounded-2xl transition-all flex flex-col justify-between space-y-4 hover:-translate-y-1">
+                <div>
+                    <div class="flex items-center justify-between text-slate-400 mb-2">
+                        <i data-lucide="github" class="w-6 h-6 text-white"></i>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Profilo GitHub Ufficiale</h3>
+                    <p class="text-slate-400 text-sm mt-2">Esplora tutti i repository dei progetti e la struttura dei codici sorgente.</p>
+                </div>
+                <span class="text-xs font-semibold text-white">github.com/quizforstudiesmo →</span>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- THESIS & AI RESEARCH SECTION -->
+    <section id="thesis" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-brand-border/40">
+        <div class="bg-gradient-to-r from-brand-card via-brand-border/30 to-brand-card border border-brand-border rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-brand-accent/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="max-w-3xl space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/20 text-brand-purple text-xs font-semibold border border-brand-purple/30">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Ricerca & Tesi Accademica
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                    "Fotografia e intelligenza artificiale: dall'autenticità alla simulazione"
+                </h2>
+
+                <p class="text-slate-300 leading-relaxed text-base sm:text-lg">
+                    Un'indagine approfondita sull'impatto dell'IA Generativa nella produzione visiva contemporanea. La ricerca analizza la transizione dallo scatto fotografico tradizionale alla generazione sintetica, valutando le implicazioni etiche, legali ed estetiche dei modelli di visione artificiale.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                    <div class="bg-brand-dark/80 p-4 rounded-xl border border-brand-border">
+                        <h4 class="text-white font-semibold flex items-center gap-2 mb-1">
+                            <i data-lucide="cpu" class="w-4 h-4 text-brand-accent"></i> Sintesi Visuale
+                        </h4>
+                        <p class="text-slate-400 text-xs">Prompt engineering avanzato e integrazione dei modelli di diffusione nel workflow creativo.</p>
+                    </div>
+                    <div class="bg-brand-dark/80 p-4 rounded-xl border border-brand-border">
+                        <h4 class="text-white font-semibold flex items-center gap-2 mb-1">
+                            <i data-lucide="shield-alert" class="w-4 h-4 text-brand-purple"></i> Etica & Autenticità
+                        </h4>
+                        <p class="text-slate-400 text-xs">Studio sul valore della prova fotografica nell'era della simulazione sintetica.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS & TOOLS SECTION -->
+    <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-brand-border/40">
+        <div class="text-center md:text-left mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white">Competenze & Strumenti</h2>
+            <p class="text-slate-400 max-w-2xl mt-2">Toolkit tecnico e metodologico per la produzione di contenuti e lo sviluppo digitale.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- AI Generativa -->
+            <div class="bg-brand-card border border-brand-border p-6 rounded-2xl space-y-4">
+                <div class="w-12 h-12 rounded-xl bg-brand-accent/20 flex items-center justify-center text-brand-accent">
+                    <i data-lucide="bot" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">IA Generativa & Visual</h3>
+                <ul class="space-y-2 text-slate-300 text-sm">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Prompt Engineering Avanzato</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Generazione Immagini Sintetiche</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> AI Video & Storytelling</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Integrazione AI nei Flussi Creativi</li>
+                </ul>
+            </div>
+
+            <!-- Visual & Editing -->
+            <div class="bg-brand-card border border-brand-border p-6 rounded-2xl space-y-4">
+                <div class="w-12 h-12 rounded-xl bg-brand-purple/20 flex items-center justify-center text-brand-purple">
+                    <i data-lucide="palette" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">Visual & Editing Audio/Video</h3>
+                <ul class="space-y-2 text-slate-300 text-sm">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-purple"></i> Adobe Lightroom & GIMP</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-purple"></i> Canva Pro & CapCut</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-purple"></i> REAPER Audio Editing</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-purple"></i> UI/UX Design Essentials</li>
+                </ul>
+            </div>
+
+            <!-- Web & Data -->
+            <div class="bg-brand-card border border-brand-border p-6 rounded-2xl space-y-4">
+                <div class="w-12 h-12 rounded-xl bg-brand-cyan/20 flex items-center justify-center text-brand-cyan">
+                    <i data-lucide="terminal" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">Sviluppo Web & Dati</h3>
+                <ul class="space-y-2 text-slate-300 text-sm">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-cyan"></i> HTML5, CSS3 & JavaScript</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-cyan"></i> Database SQL & Relazionali</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-cyan"></i> OpenOffice Base & Excel</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-cyan"></i> Linguaggio R (Data Analysis)</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER & CONTACT -->
+    <footer id="contact" class="border-t border-brand-border bg-brand-card/50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+            <h2 class="text-3xl font-bold text-white">Mettiamoci in Contatto</h2>
+            <p class="text-slate-400 max-w-xl mx-auto">Disponibile per collaborazioni nel settore Media, Comunicazione Visiva e Integrazione AI.</p>
+
+            <div class="flex flex-wrap justify-center gap-6 text-sm">
+                <a href="mailto:erick.morales.k@gmail.com" class="text-slate-300 hover:text-brand-accent transition-colors flex items-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i> erick.morales.k@gmail.com
+                </a>
+                <a href="tel:+393882576130" class="text-slate-300 hover:text-brand-accent transition-colors flex items-center gap-2">
+                    <i data-lucide="phone" class="w-4 h-4"></i> +39 388 257 6130
+                </a>
+                <span class="text-slate-500 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i> Genova, Italia
+                    </span>
+            </div>
+
+            <div class="pt-8 border-t border-brand-border/40 text-xs text-slate-500">
+                © 2026 Erick Geovanny Pincay Morales • Portfolio Interattivo
+            </div>
+        </div>
+    </footer>
+
+</main>
+
+<!-- MODAL DIALOG -->
+<div id="modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-brand-card border border-brand-border rounded-2xl max-w-2xl w-full p-6 sm:p-8 space-y-6 relative shadow-2xl">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div id="modal-content" class="space-y-4">
+            <!-- Content inserted dynamically -->
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript Logic -->
+<script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Projects Filtering Logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => {
+                b.classList.remove('bg-brand-accent', 'text-white');
+                b.classList.add('bg-brand-card', 'text-slate-300');
+            });
+            btn.classList.add('bg-brand-accent', 'text-white');
+            btn.classList.remove('bg-brand-card', 'text-slate-300');
+
+            const filter = btn.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Modal Content Data
+    const modalData = {
+        voltech: {
+            title: "Voltech Lab – App Educativa in Realtà Aumentata",
+            content: `
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Voltech Lab è nato per superare la paura dell'errore nell'apprendimento dell'elettrotecnica. Tramite l'uso della Realtà Aumentata e dell'assistente virtuale <strong>Wattino</strong>, lo studente può scansionare libri con QR code e costruire circuiti 3D in modo sicuro e interattivo.
+                    </p>
+                    <div class="bg-brand-dark p-4 rounded-xl border border-brand-border space-y-2 text-xs">
+                        <p class="text-brand-accent font-semibold">Elementi chiave della Gamification:</p>
+                        <ul class="list-disc list-inside text-slate-400 space-y-1">
+                            <li>Valutazione con punteggio massimo di 300 punti e sistema a stelle.</li>
+                            <li>Feedback visivi ed emotivi immediati da parte del personaggio Wattino.</li>
+                            <li>Passaggio dalla teoria alla simulazione pratica senza rischi materiali.</li>
+                        </ul>
+                    </div>
+                `
+        },
+        carico: {
+            title: "Carico di Rottura / Un Passo alla Volta",
+            content: `
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Progetto promosso in collaborazione con UniGe DAD e ASL3 Liguria focalizzato sulla salute mentale e sulla prevenzione dello stress psicofisico.
+                    </p>
+                    <div class="bg-brand-dark p-4 rounded-xl border border-brand-border space-y-2 text-xs">
+                        <p class="text-brand-purple font-semibold">Materiali di Comunicazione:</p>
+                        <ul class="list-disc list-inside text-slate-400 space-y-1">
+                            <li>Video short animato illustrato in bianco e nero sul tema del sovraccarico mentale.</li>
+                            <li>Serie di poster per affissione e kit grafico digitale.</li>
+                            <li>Scheda di de-briefing con analisi target e slogan della campagna.</li>
+                        </ul>
+                    </div>
+                `
+        },
+        energym: {
+            title: "EnerGym – Database & Business Intelligence",
+            content: `
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Sistema di gestione dati relazionale strutturato per centralizzare soci, contratti e opzioni di abbonamento per un centro fitness.
+                    </p>
+                    <div class="bg-brand-dark p-4 rounded-xl border border-brand-border space-y-2 text-xs">
+                        <p class="text-emerald-400 font-semibold">Architettura del Sistema:</p>
+                        <ul class="list-disc list-inside text-slate-400 space-y-1">
+                            <li><strong>Modello E-R:</strong> Tre entità chiave (Cliente, Iscrizione, Abbonamento).</li>
+                            <li>Query SQL avanzate per l'estrazione di metriche sull'affluenza.</li>
+                            <li>Dashboard statistica per la reportistica direzionale.</li>
+                        </ul>
+                    </div>
+                `
+        }
+    };
+
+    function openModal(key) {
+        const data = modalData[key];
+        if (!data) return;
+
+        document.getElementById('modal-content').innerHTML = `
+                <h3 class="text-2xl font-bold text-white">${data.title}</h3>
+                ${data.content}
+            `;
+        document.getElementById('modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+        document.getElementById('modal').classList.add('hidden');
+    }
+</script>
+</body>
+</html>
